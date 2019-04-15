@@ -26,6 +26,8 @@ type Client struct {
 	Timelines      *TimelineService
 	Trends         *TrendsService
 	Users          *UserService
+	Geo            *GeoService
+	Blocks         *BlockService
 }
 
 // NewClient returns a new Client.
@@ -47,6 +49,8 @@ func NewClient(httpClient *http.Client) *Client {
 		Timelines:      newTimelineService(base.New()),
 		Trends:         newTrendsService(base.New()),
 		Users:          newUserService(base.New()),
+		Geo:            newGeoService(base.New()),
+		Blocks:         newBlockService(base.New()),
 	}
 }
 

@@ -24,6 +24,14 @@ func (e APIError) Error() string {
 	return ""
 }
 
+func (e APIError) GetCode() int {
+	if len(e.Errors) > 0 {
+		err := e.Errors[0]
+		return err.Code
+	}
+	return 0
+}
+
 // Empty returns true if empty. Otherwise, at least 1 error message/code is
 // present and false is returned.
 func (e APIError) Empty() bool {

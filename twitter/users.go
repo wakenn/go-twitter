@@ -2,6 +2,7 @@ package twitter
 
 import (
 	"net/http"
+	"time"
 
 	"github.com/dghubble/sling"
 )
@@ -53,6 +54,11 @@ type User struct {
 	Verified                       bool          `json:"verified"`
 	WithheldInCountries            []string      `json:"withheld_in_countries"`
 	WithholdScope                  string        `json:"withheld_scope"`
+}
+
+// CreatedAtTime returns the time a tweet was created.
+func (u User) CreatedAtTime() (time.Time, error) {
+	return time.Parse(time.RubyDate, u.CreatedAt)
 }
 
 // UserService provides methods for accessing Twitter user API endpoints.
