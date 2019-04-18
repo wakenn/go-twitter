@@ -64,7 +64,6 @@ func (t Tweet) Clean() Tweet {
 	t.Scopes = nil
 	t.Source = ""
 	t.Place = nil
-	t.User = nil
 	t.WithheldCopyright = false
 	t.WithheldInCountries = []string{}
 	t.WithheldScope = ""
