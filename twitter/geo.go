@@ -15,9 +15,11 @@ type Geo struct {
 
 // GeoParams are the parameters for SearchService.Tweets
 type GeoParams struct {
-	Lat   string `url:"lat,omitempty"`
-	Long  string `url:"long,omitempty"`
-	Query string `url:"query,omitempty"`
+	Lat         string `url:"lat,omitempty"`
+	Long        string `url:"long,omitempty"`
+	Query       string `url:"query,omitempty"`
+	Accuracy    string `url:"accuracy,omitempty"`
+	Granularity string `url:"granularity,omitempty"`
 }
 
 // GeoService provides methods for accessing Twitter geo API endpoints.
