@@ -75,6 +75,10 @@ func (t Tweet) Clean() Tweet {
 	return t
 }
 
+func (t Tweet) Exists() bool {
+	return t.ID != 0
+}
+
 // CreatedAtTime returns the time a tweet was created.
 func (t Tweet) CreatedAtTime() (time.Time, error) {
 	return time.Parse(time.RubyDate, t.CreatedAt)
