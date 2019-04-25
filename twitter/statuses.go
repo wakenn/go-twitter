@@ -36,19 +36,19 @@ type Tweet struct {
 	Scopes               map[string]interface{} `json:"scopes,omitempty"`
 	Text                 string                 `json:"text,omitempty"`
 	FullText             string                 `json:"full_text,omitempty"`
-	DisplayTextRange     Indices                `json:"display_text_range,omitempty"`
-	Place                *Place                 `json:"place,omitempty"`
-	Truncated            bool                   `json:"truncated,omitempty"`
-	User                 *User                  `json:"user,omitempty"`
-	WithheldCopyright    bool                   `json:"withheld_copyright,omitempty"`
-	WithheldInCountries  []string               `json:"withheld_in_countries,omitempty"`
-	WithheldScope        string                 `json:"withheld_scope,omitempty"`
-	ExtendedEntities     *ExtendedEntity        `json:"extended_entities,omitempty"`
-	ExtendedTweet        *ExtendedTweet         `json:"extended_tweet,omitempty"`
-	QuotedStatusID       int64                  `json:"quoted_status_id,omitempty"`
-	QuotedStatusIDStr    string                 `json:"quoted_status_id_str,omitempty"`
-	QuotedStatus         *Tweet                 `json:"quoted_status,omitempty"`
-	Meta                 []string               `json:"metaDataForUs,omitempty"` // Meta data
+	// DisplayTextRange     Indices                `json:"display_text_range,omitempty"`
+	Place               *Place          `json:"place,omitempty"`
+	Truncated           bool            `json:"truncated,omitempty"`
+	User                *User           `json:"user,omitempty"`
+	WithheldCopyright   bool            `json:"withheld_copyright,omitempty"`
+	WithheldInCountries []string        `json:"withheld_in_countries,omitempty"`
+	WithheldScope       string          `json:"withheld_scope,omitempty"`
+	ExtendedEntities    *ExtendedEntity `json:"extended_entities,omitempty"`
+	ExtendedTweet       *ExtendedTweet  `json:"extended_tweet,omitempty"`
+	QuotedStatusID      int64           `json:"quoted_status_id,omitempty"`
+	QuotedStatusIDStr   string          `json:"quoted_status_id_str,omitempty"`
+	QuotedStatus        *Tweet          `json:"quoted_status,omitempty"`
+	Meta                []string        `json:"metaDataForUs,omitempty"` // Meta data
 }
 
 // CreatedAtTime returns the time a tweet was created.
