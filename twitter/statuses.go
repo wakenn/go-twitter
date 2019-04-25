@@ -11,67 +11,67 @@ import (
 // Tweet represents a Twitter Tweet, previously called a status.
 // https://dev.twitter.com/overview/api/tweets
 type Tweet struct {
-	Coordinates          *Coordinates           `json:"coordinates,omitempty"`
-	CreatedAt            string                 `json:"created_at,omitempty"`
-	CurrentUserRetweet   *TweetIdentifier       `json:"current_user_retweet,omitempty"`
-	Entities             *Entities              `json:"entities,omitempty"`
-	FavoriteCount        int                    `json:"favorite_count,omitempty"`
-	Favorited            bool                   `json:"favorited,omitempty"`
-	FilterLevel          string                 `json:"filter_level,omitempty"`
-	ID                   int64                  `json:"id,omitempty"`
-	IDStr                string                 `json:"id_str,omitempty"`
-	InReplyToScreenName  string                 `json:"in_reply_to_screen_name,omitempty"`
-	InReplyToStatusID    int64                  `json:"in_reply_to_status_id,omitempty"`
-	InReplyToStatusIDStr string                 `json:"in_reply_to_status_id_str,omitempty"`
-	InReplyToUserID      int64                  `json:"in_reply_to_user_id,omitempty"`
-	InReplyToUserIDStr   string                 `json:"in_reply_to_user_id_str,omitempty"`
-	Lang                 string                 `json:"lang,omitempty"`
-	PossiblySensitive    bool                   `json:"possibly_sensitive,omitempty"`
-	QuoteCount           int                    `json:"quote_count,omitempty"`
-	ReplyCount           int                    `json:"reply_count,omitempty"`
-	RetweetCount         int                    `json:"retweet_count,omitempty"`
-	Retweeted            bool                   `json:"retweeted,omitempty"`
-	RetweetedStatus      *Tweet                 `json:"retweeted_status,omitempty"`
-	Source               string                 `json:"source,omitempty"`
-	Scopes               map[string]interface{} `json:"scopes,omitempty"`
-	Text                 string                 `json:"text,omitempty"`
-	FullText             string                 `json:"full_text,omitempty"`
+	// Coordinates          *Coordinates           `json:"coordinates,omitempty"`
+	CreatedAt string `json:"created_at,omitempty"`
+	// CurrentUserRetweet   *TweetIdentifier       `json:"current_user_retweet,omitempty"`
+	// Entities      *Entities `json:"entities,omitempty"`
+	FavoriteCount int `json:"favorite_count,omitempty"`
+	// Favorited     bool `json:"favorited,omitempty"`
+	// FilterLevel          string                 `json:"filter_level,omitempty"`
+	ID    int64  `json:"id,omitempty"`
+	IDStr string `json:"id_str,omitempty"`
+	// InReplyToScreenName  string `json:"in_reply_to_screen_name,omitempty"`
+	// InReplyToStatusID    int64  `json:"in_reply_to_status_id,omitempty"`
+	// InReplyToStatusIDStr string `json:"in_reply_to_status_id_str,omitempty"`
+	// InReplyToUserID      int64  `json:"in_reply_to_user_id,omitempty"`
+	// InReplyToUserIDStr   string `json:"in_reply_to_user_id_str,omitempty"`
+	// Lang                 string                 `json:"lang,omitempty"`
+	// PossiblySensitive    bool                   `json:"possibly_sensitive,omitempty"`
+	// QuoteCount      int    `json:"quote_count,omitempty"`
+	ReplyCount      int    `json:"reply_count,omitempty"`
+	RetweetCount    int    `json:"retweet_count,omitempty"`
+	Retweeted       bool   `json:"retweeted,omitempty"`
+	RetweetedStatus *Tweet `json:"retweeted_status,omitempty"`
+	// Source               string                 `json:"source,omitempty"`
+	// Scopes               map[string]interface{} `json:"scopes,omitempty"`
+	Text     string `json:"text,omitempty"`
+	FullText string `json:"full_text,omitempty"`
 	// DisplayTextRange     Indices                `json:"display_text_range,omitempty"`
-	Place               *Place          `json:"place,omitempty"`
-	Truncated           bool            `json:"truncated,omitempty"`
-	User                *User           `json:"user,omitempty"`
-	WithheldCopyright   bool            `json:"withheld_copyright,omitempty"`
-	WithheldInCountries []string        `json:"withheld_in_countries,omitempty"`
-	WithheldScope       string          `json:"withheld_scope,omitempty"`
-	ExtendedEntities    *ExtendedEntity `json:"extended_entities,omitempty"`
-	ExtendedTweet       *ExtendedTweet  `json:"extended_tweet,omitempty"`
-	QuotedStatusID      int64           `json:"quoted_status_id,omitempty"`
-	QuotedStatusIDStr   string          `json:"quoted_status_id_str,omitempty"`
-	QuotedStatus        *Tweet          `json:"quoted_status,omitempty"`
-	Meta                []string        `json:"metaDataForUs,omitempty"` // Meta data
+	Place *Place `json:"place,omitempty"`
+	// Truncated           bool            `json:"truncated,omitempty"`
+	User *User `json:"user,omitempty"`
+	// WithheldCopyright   bool            `json:"withheld_copyright,omitempty"`
+	// WithheldInCountries []string        `json:"withheld_in_countries,omitempty"`
+	// WithheldScope       string          `json:"withheld_scope,omitempty"`
+	// ExtendedEntities    *ExtendedEntity `json:"extended_entities,omitempty"`
+	// ExtendedTweet       *ExtendedTweet  `json:"extended_tweet,omitempty"`
+	// QuotedStatusID      int64           `json:"quoted_status_id,omitempty"`
+	// QuotedStatusIDStr   string          `json:"quoted_status_id_str,omitempty"`
+	// QuotedStatus        *Tweet          `json:"quoted_status,omitempty"`
+	Meta []string `json:"metaDataForUs,omitempty"` // Meta data
 }
 
 // CreatedAtTime returns the time a tweet was created.
 func (t Tweet) Clean() Tweet {
-	t.Coordinates = nil
-	t.CurrentUserRetweet = nil
-	t.Entities = nil
-	t.Favorited = false
-	t.FilterLevel = ""
-	t.InReplyToScreenName = ""
-	t.Lang = ""
+	// t.Coordinates = nil
+	// t.CurrentUserRetweet = nil
+	// t.Entities = nil
+	// t.Favorited = false
+	// t.FilterLevel = ""
+	// t.InReplyToScreenName = ""
+	// t.Lang = ""
 	t.RetweetedStatus = nil
-	t.Scopes = nil
-	t.Source = ""
+	// t.Scopes = nil
+	// t.Source = ""
 	t.Place = nil
-	t.WithheldCopyright = false
-	t.WithheldInCountries = []string{}
-	t.WithheldScope = ""
-	t.ExtendedEntities = nil
-	t.ExtendedTweet = nil
-	t.QuotedStatusID = 0
-	t.QuotedStatusIDStr = ""
-	t.QuotedStatus = nil
+	// t.WithheldCopyright = false
+	// t.WithheldInCountries = []string{}
+	// t.WithheldScope = ""
+	// t.ExtendedEntities = nil
+	// t.ExtendedTweet = nil
+	// t.QuotedStatusID = 0
+	// t.QuotedStatusIDStr = ""
+	// t.QuotedStatus = nil
 	return t
 }
 
