@@ -11,8 +11,8 @@ import (
 // Tweet represents a Twitter Tweet, previously called a status.
 // https://dev.twitter.com/overview/api/tweets
 type Tweet struct {
-	// Coordinates          *Coordinates           `json:"coordinates,omitempty"`
-	CreatedAt string `json:"created_at,omitempty"`
+	Coordinates *Coordinates `json:"coordinates,omitempty"`
+	CreatedAt   string       `json:"created_at,omitempty"`
 	// CurrentUserRetweet   *TweetIdentifier       `json:"current_user_retweet,omitempty"`
 	// Entities      *Entities `json:"entities,omitempty"`
 	FavoriteCount int `json:"favorite_count,omitempty"`
@@ -23,7 +23,7 @@ type Tweet struct {
 	// InReplyToScreenName  string `json:"in_reply_to_screen_name,omitempty"`
 	// InReplyToStatusID    int64  `json:"in_reply_to_status_id,omitempty"`
 	// InReplyToStatusIDStr string `json:"in_reply_to_status_id_str,omitempty"`
-	// InReplyToUserID      int64  `json:"in_reply_to_user_id,omitempty"`
+	InReplyToUserID int64 `json:"in_reply_to_user_id,omitempty"`
 	// InReplyToUserIDStr   string `json:"in_reply_to_user_id_str,omitempty"`
 	// Lang                 string                 `json:"lang,omitempty"`
 	// PossiblySensitive    bool                   `json:"possibly_sensitive,omitempty"`
@@ -58,7 +58,7 @@ func (t Tweet) Clean() Tweet {
 	// t.Entities = nil
 	// t.Favorited = false
 	// t.FilterLevel = ""
-	// t.InReplyToScreenName = ""
+	t.InReplyToUserID = 0
 	// t.Lang = ""
 	t.RetweetedStatus = nil
 	// t.Scopes = nil

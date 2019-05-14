@@ -26,10 +26,10 @@ type User struct {
 	ID    int64  `json:"id"`
 	IDStr string `json:"id_str"`
 	// IsTranslator                   bool          `json:"is_translator"`
-	// Lang                           string        `json:"lang"`
+	Lang string `json:"lang"`
 	// ListedCount                    int           `json:"listed_count"`
-	// Location string `json:"location"`
-	Name string `json:"name,omitempty"`
+	Location string `json:"location"`
+	Name     string `json:"name,omitempty"`
 	// Notifications                  bool          `json:"notifications"`
 	// ProfileBackgroundColor         string        `json:"profile_background_color"`
 	// ProfileBackgroundImageURL      string        `json:"profile_background_image_url"`
